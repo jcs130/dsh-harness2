@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "sources": {
+    "src/client.tsx": "e75fbf0c652aae66c62829dabcc1cf0cdeddd0925ffd621453fd0a44a07d7f2e",
+    "scripts/build.mjs": "d3c87422856fd674502855dab5beae904a7f64f585697bf530a4c4d9ba957aa8"
+  },
+  "sha256": "02bae83f9658ea8e7df2d5bde56c93f587d6ab2ed4ad3ef6ce9306a21e223b2a"
+}

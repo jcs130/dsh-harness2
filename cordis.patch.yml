@@ -1,0 +1,6 @@
+# The browser view works immediately; no experiment runs without private config.
+- insert:
+    - id: harness2-lab
+      name: '@jcs130/dsh-harness2'
+      config:
+        configFile: ''

@@ -1,0 +1,42 @@
+{
+  "name": "@jcs130/dsh-harness2",
+  "version": "0.1.0-rc.1",
+  "description": "Bounded Harness² experiments for DeepSeek Harness, with native experiment views and pluggable isolated task adapters.",
+  "type": "module",
+  "license": "MIT",
+  "author": "jcs130",
+  "icon": "assets/icon.svg",
+  "main": "./src/plugin.mjs",
+  "exports": {
+    ".": "./src/plugin.mjs",
+    "./runtime": "./src/runtime.mjs",
+    "./model": "./src/model.mjs",
+    "./adapters/ledger": "./src/ledger.mjs",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locales/*.json",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "client": { "platform": "web", "inject": ["@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-client-ui-session", "@deepseek-ai/dsh-client-connection"] },
+    "bundle": { "patch": "./cordis.patch.yml" }
+  },
+  "engines": { "node": ">=24", "dsh": "^0.2.1-rc.2" },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": "^0.2.1-rc.2",
+    "@deepseek-ai/dsh-llm": "^0.2.1-rc.2",
+    "@deepseek-ai/dsh-tools": "^0.2.1-rc.2",
+    "@deepseek-ai/dsh-client-connection": "^0.2.1-rc.2"
+  },
+  "dependencies": { "@deepseek-ai/schemastery": "3.18.5" },
+  "devDependencies": { "esbuild": "0.25.12", "react": "18.3.1", "react-dom": "18.3.1" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "prepack": "node scripts/verify-build.mjs",
+    "demo": "node scripts/demo.mjs"
+  },
+  "files": ["src/*.mjs", "lib/client.js", "lib/client.build.json", "bridges/*.py", "bridges/*.txt", "assets", "locales", "examples", "docs", "scripts/demo.mjs", "scripts/verify-build.mjs", "cordis.patch.yml", "README.md", "LICENSE", "NOTICE"],
+  "keywords": ["dsh-plugin", "deepseek-harness", "harness2", "experiments", "agent", "self-improvement"]
+}

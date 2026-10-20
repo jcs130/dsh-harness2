@@ -1,0 +1,8 @@
+This is an independent DeepSeek Harness plugin; it is not an official Google
+or DeepSeek release. Harness² is Google Research's Apache-2.0 project:
+https://github.com/google-research/harness2
+
+The Python bridge imports the separately installed upstream implementation at
+revision 1cfe254e8d25b15f37048c3730134686abe60335. It does not vendor the upstream
+optimizer or invoke its unrestricted OpenCode/Codex executor. The host supplies
+model callbacks and explicit, isolated execution adapters.
