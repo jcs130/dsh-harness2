@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Harness² DSH Plugins",
+    "zh": "Harness² DSH 插件"
+  },
+  "description": {
+    "en": "Independent Harness² plugin previews. This catalog is separate from community market review.",
+    "zh": "独立 Harness² 插件预览索引，与社区市场审核分别记录。"
+  },
+  "metadata": {
+    "categories": {
+      "experimental": {
+        "title": {
+          "en": "Experimental",
+          "zh": "实验工具"
+        }
+      }
+    },
+    "labels": {
+      "preview": {
+        "title": {
+          "en": "Preview",
+          "zh": "预览"
+        }
+      }
+    },
+    "sortKeys": {}
+  },
+  "plugins": [
+    {
+      "name": "@jcs130/dsh-harness2",
+      "title": {
+        "en": "Harness² Lab",
+        "zh": "Harness² 实验室"
+      },
+      "description": {
+        "en": "Bounded Harness² experiments using DSH models: candidate generation, isolated trials, comparisons and reflection. Installation starts no experiment or automatic adoption.",
+        "zh": "复用 DSH 模型的 Harness² 实验：候选生成、隔离试跑、对照与反思。安装不会自动实验或采用配置；执行器需 Linux / WSL Python。"
+      },
+      "icon": "https://raw.githubusercontent.com/jcs130/dsh-harness2/v0.1.0-rc.1/assets/icon.svg",
+      "author": "jcs130",
+      "homepage": "https://github.com/jcs130/dsh-harness2#readme",
+      "repository": {
+        "url": "https://github.com/jcs130/dsh-harness2"
+      },
+      "metadata": {
+        "category": "experimental",
+        "keywords": [
+          "harness2",
+          "Harness²",
+          "实验室",
+          "实验",
+          "agent",
+          "self-improvement",
+          "workflow",
+          "desktop"
+        ],
+        "labels": [
+          "preview"
+        ],
+        "sortKeys": {}
+      },
+      "versions": [
+        {
+          "version": "0.1.0-rc.1",
+          "publishTimestamp": 1792513258,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/jcs130/dsh-harness2.git",
+            "commit": "811c598215f2ea955e63389898e13b06ca2289b2"
+          },
+          "engines": {
+            "dsh": "^0.2.1-rc.2"
+          }
+        }
+      ]
+    }
+  ]
+}
