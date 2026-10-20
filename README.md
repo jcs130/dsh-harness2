@@ -10,6 +10,16 @@
 
 DSH 兼容基线：`0.2.1-rc.2`，Node.js 24+。Desktop 使用同一套 `web` 客户端，注册原生 `conversation.view`，无需 iframe、额外端口或跨域豁免。安装本身不启动实验、模型、游戏或 Python。
 
+公开预览版通过 [GitHub Releases](https://github.com/jcs130/dsh-harness2/releases/tag/v0.1.0-rc.1) 分发，可直接安装固定标签：
+
+```sh
+dsh plugin --profile <你的profile> add github:jcs130/dsh-harness2#v0.1.0-rc.1
+```
+
+也可在 Desktop 插件管理器中填写这个 Git 来源，或选择 Release 中的 `.tgz`。首次运行实验还需下面的 Python 执行器与明确配置，安装插件不自动下载或启动优化器。
+
+自定义市场入口：[Harness² 插件索引](https://raw.githubusercontent.com/jcs130/dsh-harness2/main/market/index.json)。在 DSH 启用“自定义插件市场”后添加此地址，可搜索 `Harness²` / `Harness2` / `实验室`。该入口与社区市场的审核/合并分别记录；不要把提交 PR 当作已经上架社区主索引。
+
 开发目录：
 
 ```sh
@@ -92,5 +102,7 @@ Agent 的工具：
 ## 发布状态
 
 本地源码、测试、打包、独立安装与市场提交分别记录。以 [验证记录](docs/verification.md) 为准，不能把本地安装成功当作 npm 已发布或市场已上架。
+
+`0.1.0-rc.1` 是预览版本。当前公开安装来源为 GitHub，npm registry 的同名包尚未发布；不使用裸包名安装命令冒充 npm 可用。回退时在 DSH 插件管理器移除 `@jcs130/dsh-harness2`，保留私有 `dataDir` 与 Python 临时工作区中的原证据。
 
 代码 MIT；上游 Harness² 独立安装，遵守其 Apache-2.0 许可，见 [NOTICE](NOTICE)。

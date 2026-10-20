@@ -5,6 +5,9 @@
   "type": "module",
   "license": "MIT",
   "author": "jcs130",
+  "repository": { "type": "git", "url": "git+https://github.com/jcs130/dsh-harness2.git" },
+  "homepage": "https://github.com/jcs130/dsh-harness2#readme",
+  "bugs": { "url": "https://github.com/jcs130/dsh-harness2/issues" },
   "icon": "assets/icon.svg",
   "main": "./src/plugin.mjs",
   "exports": {
