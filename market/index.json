@@ -66,9 +66,8 @@
           "version": "0.1.0-rc.1",
           "publishTimestamp": 1792513258,
           "source": {
-            "type": "git",
-            "url": "https://github.com/jcs130/dsh-harness2.git",
-            "commit": "811c598215f2ea955e63389898e13b06ca2289b2"
+            "type": "npm",
+            "registry": "https://registry.npmjs.org"
           },
           "engines": {
             "dsh": "^0.2.1-rc.2"

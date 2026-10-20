@@ -10,7 +10,13 @@
 
 DSH 兼容基线：`0.2.1-rc.2`，Node.js 24+。Desktop 使用同一套 `web` 客户端，注册原生 `conversation.view`，无需 iframe、额外端口或跨域豁免。安装本身不启动实验、模型、游戏或 Python。
 
-公开预览版通过 [GitHub Releases](https://github.com/jcs130/dsh-harness2/releases/tag/v0.1.0-rc.1) 分发，可直接安装固定标签：
+公开预览版已发布到 [npm](https://www.npmjs.com/package/@jcs130/dsh-harness2/v/0.1.0-rc.1)，在 DSH 插件管理器填写 `@jcs130/dsh-harness2@0.1.0-rc.1`，或安装固定版本：
+
+```sh
+dsh plugin --profile <你的profile> add @jcs130/dsh-harness2@0.1.0-rc.1
+```
+
+[GitHub Releases](https://github.com/jcs130/dsh-harness2/releases/tag/v0.1.0-rc.1) 保留同字节的安装包，也可安装固定标签：
 
 ```sh
 dsh plugin --profile <你的profile> add github:jcs130/dsh-harness2#v0.1.0-rc.1
@@ -103,6 +109,6 @@ Agent 的工具：
 
 本地源码、测试、打包、独立安装与市场提交分别记录。以 [验证记录](docs/verification.md) 为准，不能把本地安装成功当作 npm 已发布或市场已上架。
 
-`0.1.0-rc.1` 是预览版本。当前公开安装来源为 GitHub，npm registry 的同名包尚未发布；不使用裸包名安装命令冒充 npm 可用。回退时在 DSH 插件管理器移除 `@jcs130/dsh-harness2`，保留私有 `dataDir` 与 Python 临时工作区中的原证据。
+`0.1.0-rc.1` 是预览版本，npm 提供 `next` 标签及固定版本安装。npm 与 GitHub 安装包 SHA256 均为 `cb4f177727adb0554eea051748e8339ab764f34212b2f9e3c447900d4f7515ec`；包内说明保留首次 GitHub 发布的快照，当前安装信息以本页为准。回退时在 DSH 插件管理器移除 `@jcs130/dsh-harness2`，保留私有 `dataDir` 与 Python 临时工作区中的原证据。
 
 代码 MIT；上游 Harness² 独立安装，遵守其 Apache-2.0 许可，见 [NOTICE](NOTICE)。
