@@ -15,6 +15,7 @@
     "./runtime": "./src/runtime.mjs",
     "./model": "./src/model.mjs",
     "./adapters/ledger": "./src/ledger.mjs",
+    "./sources/minecraft": "./src/minecraft-source.mjs",
     "./client": "./lib/client.js",
     "./locale/*.json": "./locales/*.json",
     "./package.json": "./package.json",

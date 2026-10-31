@@ -93,6 +93,8 @@ Agent 的工具：
 
 ## 扩展与记忆
 
+Minecraft 的[多步骤合成最小实验](docs/minecraft-practice.md)复用核心练习执行器与方法库，Lab 可通过导出的只读 source 展示记录。当前为待审查源码；确定性配方/库存测试不代表真实游戏或模型能力提升，未自动采用或改动在线 Agent。
+
 见 [适配器契约](docs/adapters.md)。领域插件注册 `ctx.harness2.registerAdapter(adapter)`；已有独立优化器可以注册只读 `registerSource`，保留自己的事实来源。候选文件不是宿主权限，不能改变模型凭据、DSH 启动配置、插件列表或在线身体。
 
 宿主可提供 `memory.recall/remember`，由宿主维护规范记忆。反思带有对应试跑证据与适用限制，下一任务只召回这类有界经验。没有记忆端口时，结果仍保存在任务证据目录，但页面明确标记“未配置宿主记忆”，不宣称已经实现跨任务能力提升。
