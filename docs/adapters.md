@@ -98,4 +98,6 @@ ctx.effect(() => off);
 
 ## 采用边界
 
+可运行的 Minecraft 最小实验与只读 source 用法见 [Minecraft 接入](minecraft-practice.md)。领域 fixture 位于核心包，本插件不复制游戏执行器。
+
 `eligible` 只表示通过已配置隔离场景的门槛，`adopted` 永远为 false。宿主应单独审核候选差异、原版/留出证据、适用环境与回滚版本，再通过其既有采用接口处理。实验插件没有“自动覆盖线上配置”路径。
