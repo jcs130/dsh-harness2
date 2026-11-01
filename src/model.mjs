@@ -22,6 +22,7 @@ export function createDshModel(llm,config){
     for await(const chunk of llm.stream({...route,sessionId:request.sessionId,signal,system:SYSTEM,
       messages:[createUserMessage({content:[{type:'text',text:canonical({stage:request.stage,editable:request.editable,mission:request.mission,files:request.files})}]})]})){
       signal.throwIfAborted();
+      if(finished&&(chunk.type==='text-delta'||chunk.type==='block-end'&&chunk.block?.type==='text'))throw Error('Model text after terminal');
       if(chunk.type==='text-delta')output+=chunk.text;
       if(chunk.type==='block-end'&&chunk.block?.type==='text')fallback+=chunk.block.text;
       if(output.length>64000||fallback.length>64000)throw Error('Model artifact exceeds output limit');
@@ -34,6 +35,10 @@ export function createDshModel(llm,config){
     if(!finished)throw Error('Model stream has no terminal');
     const reply=JSON.parse(output||fallback);
     if(!reply||Object.getPrototypeOf(reply)!==Object.prototype)throw Error('Expected a structured model artifact');
+    if(Object.keys(reply).some(k=>!['files','choice','experience','notes'].includes(k)))throw Error('Unexpected model artifact fields');
+    if(reply.files!==undefined&&(!reply.files||Object.getPrototypeOf(reply.files)!==Object.prototype
+      ||Object.entries(reply.files).some(([k,v])=>!request.editable?.includes(k)||typeof v!=='string')))
+      throw Error('Model patch is outside the declared editable files');
     const n=k=>Number.isSafeInteger(lastUsage?.[k])&&lastUsage[k]>=0?lastUsage[k]:null;
     const input=n('inputTokens'),read=n('cacheReadTokens'),write=n('cacheWriteTokens');
     // DSH inputTokens excludes cache reads/writes. Unknown components stay unknown.

@@ -1,6 +1,6 @@
 {
   "name": "@jcs130/dsh-harness2",
-  "version": "0.1.0-rc.1",
+  "version": "0.1.0-rc.2-modelpractice.1",
   "description": "Bounded Harness² experiments for DeepSeek Harness, with native experiment views and pluggable isolated task adapters.",
   "type": "module",
   "license": "MIT",
@@ -16,6 +16,8 @@
     "./model": "./src/model.mjs",
     "./adapters/ledger": "./src/ledger.mjs",
     "./sources/minecraft": "./src/minecraft-source.mjs",
+    "./models/minecraft": "./src/minecraft-model.mjs",
+    "./experiments/minecraft": "./examples/minecraft-connected-practice.mjs",
     "./client": "./lib/client.js",
     "./locale/*.json": "./locales/*.json",
     "./package.json": "./package.json",
